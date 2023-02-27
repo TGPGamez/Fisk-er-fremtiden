@@ -1,4 +1,4 @@
-# Vaskeriet
+# Fisk er fremtiden
 
 Produktrapport: https://docs.google.com/document/d/1yfdqQeIZ-jyE7a1pnc2Mv0TwW2Q5Nk2dcBL_ipFHLco/edit?usp=sharing
 
