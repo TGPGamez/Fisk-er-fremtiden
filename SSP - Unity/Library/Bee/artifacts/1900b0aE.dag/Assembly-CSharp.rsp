@@ -386,6 +386,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/Game scene assets/Scripts/ButtonController.cs"
 "Assets/Game scene assets/Scripts/SpawnController.cs"
+"Assets/HandAnimatorController.cs"
 "Assets/HandPresencePhysics.cs"
 "Assets/MainMenuHandler.cs"
 "Assets/Oculus Hands Physics/Scripts/HandPresence.cs"
