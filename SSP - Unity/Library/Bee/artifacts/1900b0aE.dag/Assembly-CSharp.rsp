@@ -385,6 +385,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/Game scene assets/Scripts/ButtonController.cs"
+"Assets/Game scene assets/Scripts/ItemController.cs"
 "Assets/Game scene assets/Scripts/SpawnController.cs"
 "Assets/HandAnimatorController.cs"
 "Assets/HandPresencePhysics.cs"
@@ -424,6 +425,8 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
+"Assets/Tobias Test scene/Game.cs"
+"Assets/Tobias Test scene/Timer.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 
