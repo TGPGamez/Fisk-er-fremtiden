@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ButtonController : XRBaseInteractable
 {
     /// <summary>
-    /// 
+    /// When the button is pressed the event activete
     /// </summary>
     public UnityEvent OnPress = null;
 
@@ -18,6 +18,8 @@ public class ButtonController : XRBaseInteractable
 
     //
     private float handHeight = 0.0f;
+    
+    //XRBaseIntertactor is a interactor like a controller
     private XRBaseInteractor interactor = null;
 
     /// <summary>
