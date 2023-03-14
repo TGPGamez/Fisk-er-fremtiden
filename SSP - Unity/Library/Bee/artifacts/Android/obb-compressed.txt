@@ -1,0 +1,2 @@
+assets/bin/Data/UnitySubsystems/OculusXRPlugin/UnitySubsystemsManifest.json
+assets/bin/Data/UnitySubsystems/UnityOpenXR/UnitySubsystemsManifest.json
