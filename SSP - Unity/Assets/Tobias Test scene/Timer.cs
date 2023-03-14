@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private Indicator type;
     private float timeLeft;
     [SerializeField] private UnityEvent endEvent = new UnityEvent();
+    [SerializeField] private UnityEvent everySecondEvent = new UnityEvent();
 
 
     void Start()
@@ -27,6 +28,7 @@ public class Timer : MonoBehaviour
             {
                 elapsed = elapsed % 1f;
                 timeLeft--;
+                everySecondEvent.Invoke();
                 if (timeLeft == 0)
                 {
                     endEvent.Invoke();
