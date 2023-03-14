@@ -132,7 +132,6 @@ public class ButtonController : XRBaseInteractable
 
         if (inPosition && inPosition != previousPress)
         {
-            Debug.Log("Button Pressed");
             OnPress.Invoke();
         }
 
