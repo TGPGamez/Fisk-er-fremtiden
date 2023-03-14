@@ -15,4 +15,9 @@ public class SpawnController : MonoBehaviour
         pos = pos + offsetPos;
         Instantiate(SpawnObject, pos, rotation);
     }
+
+    public void debugTest()
+    {
+        Debug.Log("Tester");
+    }
 }
