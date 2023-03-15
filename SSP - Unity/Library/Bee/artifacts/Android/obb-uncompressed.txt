@@ -1,0 +1,2 @@
+assets/bin/Data/data.unity3d
+unity_obb_guid
