@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private float time;
     [SerializeField] private Indicator type;
-    private float timeLeft;
+    [SerializeField] private float timeLeft;
     [SerializeField] private UnityEvent endEvent = new UnityEvent();
     [SerializeField] private UnityEvent everySecondEvent = new UnityEvent();
 
@@ -28,10 +28,16 @@ public class Timer : MonoBehaviour
             {
                 elapsed = elapsed % 1f;
                 timeLeft--;
-                everySecondEvent.Invoke();
+                if (everySecondEvent != null)
+                {
+                    everySecondEvent.Invoke();
+                }
                 if (timeLeft == 0)
                 {
-                    endEvent.Invoke();
+                    if (endEvent != null)
+                    {
+                        endEvent.Invoke();
+                    }
                 }
             }
         }
