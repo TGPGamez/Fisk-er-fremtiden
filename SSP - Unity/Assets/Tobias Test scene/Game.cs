@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
+    public Slider foodslider;
+    public Slider sicknesSlider;
+    public Slider waterPollutionSlider;
+
     [SerializeField] private float fish; 
     [SerializeField] private float fishWeight; 
     [SerializeField] private float food; 
@@ -74,9 +79,13 @@ public class Game : MonoBehaviour
         if(waterPollution > 100) { waterPollution = 100; }
         if(sickness > 100) { sickness = 100; }
         if(food < 0) { food = 0; }
+        if(fish < 0) { fish = 0; }
+        foodslider.value = food;
+        sicknesSlider.value = sickness;
+        waterPollutionSlider.value = waterPollution;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Food"))
         {
@@ -108,7 +117,7 @@ public class Game : MonoBehaviour
         }
     }
 
-    private void cleanWater()
+    public void cleanWater()
     {
         waterPollution -= 50;
         if(waterPollution < 0)
