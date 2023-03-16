@@ -124,5 +124,6 @@ public class Game : MonoBehaviour
         {
             waterPollution = 0;
         }
+        waterPollutionSlider.value = waterPollution;
     }
 }
