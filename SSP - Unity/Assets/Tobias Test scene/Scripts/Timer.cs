@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private float time;
     [SerializeField] private Indicator type;
-    private float timeLeft;
+    [SerializeField] private float timeLeft;
     [SerializeField] private UnityEvent endEvent = new UnityEvent();
     [SerializeField] private UnityEvent everySecondEvent = new UnityEvent();
     public TMP_Text visualtimer;
@@ -34,9 +34,16 @@ public class Timer : MonoBehaviour
                 everySecondEvent.Invoke();
                 TimeSpan time = TimeSpan.FromSeconds(timeLeft);
                 visualtimer.text = string.Format($"{time.Minutes}:{time.Seconds}");
+                if (everySecondEvent != null)
+                {
+                    everySecondEvent.Invoke();
+                }
                 if (timeLeft == 0)
                 {
-                    endEvent.Invoke();
+                    if (endEvent != null)
+                    {
+                        endEvent.Invoke();
+                    }
                 }
             }
         }
