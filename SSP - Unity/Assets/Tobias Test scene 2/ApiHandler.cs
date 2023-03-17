@@ -5,9 +5,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using UnityEngine;
 using UnityEngine.Events;
-using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Text;
+using Newtonsoft.Json;
 
 public class ApiHandler : MonoBehaviour
 {

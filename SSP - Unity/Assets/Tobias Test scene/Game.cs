@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Game : MonoBehaviour
 {
     public Slider foodslider;
     public Slider sicknesSlider;
     public Slider waterPollutionSlider;
+    public TMP_Text FishAmount;
+    public TMP_Text FishWeight;
 
     [SerializeField] private float fish; 
     [SerializeField] private float fishWeight; 
@@ -83,6 +86,8 @@ public class Game : MonoBehaviour
         foodslider.value = food;
         sicknesSlider.value = sickness;
         waterPollutionSlider.value = waterPollution;
+        FishAmount.text = fish.ToString();
+        FishWeight.text = fishWeight.ToString();
     }
 
     private void OnCollisionEnter(Collision other)

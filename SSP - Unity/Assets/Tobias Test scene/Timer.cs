@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
+using System;
 
 public class Timer : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class Timer : MonoBehaviour
     private float timeLeft;
     [SerializeField] private UnityEvent endEvent = new UnityEvent();
     [SerializeField] private UnityEvent everySecondEvent = new UnityEvent();
+    public TMP_Text visualtimer;
 
 
     void Start()
@@ -29,6 +32,8 @@ public class Timer : MonoBehaviour
                 elapsed = elapsed % 1f;
                 timeLeft--;
                 everySecondEvent.Invoke();
+                TimeSpan time = TimeSpan.FromSeconds(timeLeft);
+                visualtimer.text = string.Format($"{time.Minutes}:{time.Seconds}");
                 if (timeLeft == 0)
                 {
                     endEvent.Invoke();
