@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,8 @@ public class ButtonController : XRBaseInteractable
     public UnityEvent OnPress = null;
 
     //
-    private float zMin = 0.0f;
-    private float zMax = 0.0f;
+    private float yMin = 0.0f;
+    private float yMax = 0.0f;
     private bool previousPress = false;
 
     //
@@ -48,7 +49,7 @@ public class ButtonController : XRBaseInteractable
     private void StartPress(HoverEnterEventArgs hoverEnter)
     {
         interactor = (XRBaseInteractor)hoverEnter.interactorObject;
-        handHeight = GetLocalZPosition(hoverEnter.interactorObject.transform.position);
+        handHeight = GetLocalYPosition(hoverEnter.interactorObject.transform.position);
     }
 
     /// <summary>
@@ -61,7 +62,7 @@ public class ButtonController : XRBaseInteractable
         handHeight = 0.0f;
 
         previousPress = false;
-        SetZPosition(zMax);
+        SetYPosition(yMax);
     }
     
     /// <summary>
@@ -78,48 +79,63 @@ public class ButtonController : XRBaseInteractable
     private void SetMinMax()
     {
         Collider collider = GetComponent<Collider>();
-        zMin = transform.localPosition.z - (collider.bounds.size.z * 0.25f);
-        zMax = transform.localPosition.z;
+        yMin = transform.localPosition.y - (collider.bounds.size.y * 0.25f);
+        yMax = transform.localPosition.y;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="updatePhase"></param>
+    ///// <summary>
+    ///// 
+    ///// </summary>
+    ///// <param name="updatePhase"></param>
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
     {
         if (interactor)
         {
-            float newHandHeigth = GetLocalZPosition(interactor.transform.position);
+            float newHandHeigth = GetLocalYPosition(interactor.transform.position);
             float handDifference = handHeight - newHandHeigth;
             handHeight = newHandHeigth;
 
-            float newPosition = transform.localPosition.z - handDifference;
-            SetZPosition(newPosition);
+            float newPosition = transform.localPosition.y - handDifference;
+            SetYPosition(newPosition);
 
             CheckPress();
         }
     }
+
+    //public override void ProcessInteractor(XRInteractionUpdateOrder.UpdatePhase updatePhase)
+    //{
+    //    if (interactor)
+    //    {
+    //        float newHandHeigth = GetLocalYPosition(interactor.transform.position);
+    //        float handDifference = handHeight - newHandHeigth;
+    //        handHeight = newHandHeigth;
+
+    //        float newPosition = transform.localPosition.y - handDifference;
+    //        SetYPosition(newPosition);
+
+    //        CheckPress();
+    //    }
+    //}
 
     /// <summary>
     /// 
     /// </summary>
     /// <param name="position"></param>
     /// <returns></returns>
-    private float GetLocalZPosition(Vector3 position)
+    private float GetLocalYPosition(Vector3 position)
     {
         Vector3 localPosition = transform.root.InverseTransformPoint(position);
-        return localPosition.z;
+        return localPosition.y;
     }
 
     /// <summary>
     /// 
     /// </summary>
     /// <param name="position"></param>
-    private void SetZPosition(float position)
+    private void SetYPosition(float position)
     {
         Vector3 newPosition = transform.localPosition;
-        newPosition.z = Mathf.Clamp(position, zMin, zMax);
+        newPosition.y = Mathf.Clamp(position, yMin, yMax);
         transform.localPosition = newPosition;
     }
 
@@ -144,8 +160,8 @@ public class ButtonController : XRBaseInteractable
     /// <returns></returns>
     private bool InPosition()
     {
-        float inRange = Mathf.Clamp(transform.localPosition.z, zMin, zMin + 0.01f);
+        float inRange = Mathf.Clamp(transform.localPosition.y, yMin, yMin + 0.01f);
 
-        return transform.localPosition.z == inRange;
+        return transform.localPosition.y == inRange;
     }
 }
