@@ -14,15 +14,15 @@ public class CanvasHandler : MonoBehaviour
     [SerializeField] private ApiHandler apiHandler;
     [SerializeField] private SceneControl sceneControl;
 
-    private float fishAmount;
-    private float fishWeight;
-    private float points;
+    private int fishAmount;
+    private int fishWeight;
+    private int points;
 
     private void OnEnable()
     {
-        fishAmount = PlayerPrefs.GetFloat("fishAmount");
-        fishWeight = PlayerPrefs.GetFloat("fishWeight");
-        points = PlayerPrefs.GetFloat("points");
+        fishAmount = PlayerPrefs.GetInt("fishAmount");
+        fishWeight = PlayerPrefs.GetInt("fishWeight");
+        points = PlayerPrefs.GetInt("points");
     }
 
 

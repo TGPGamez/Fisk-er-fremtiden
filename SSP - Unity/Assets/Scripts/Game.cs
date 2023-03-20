@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Game : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class Game : MonoBehaviour
     public TMP_Text FishAmount;
     public TMP_Text FishWeight;
 
-    [SerializeField] private float fish; 
-    [SerializeField] private float fishWeight; 
+    [SerializeField] private int fish; 
+    [SerializeField] private int fishWeight; 
     [SerializeField] private float food; 
     [SerializeField] private float waterPollution; 
     [SerializeField] private float sickness;
@@ -21,12 +22,12 @@ public class Game : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerPrefs.SetFloat("fishAmount", fish);
-        PlayerPrefs.SetFloat("fishWeight", fishWeight);
-        PlayerPrefs.SetFloat("points", CalculatePoints());
+        PlayerPrefs.SetInt("fishAmount", fish);
+        PlayerPrefs.SetInt("fishWeight", fishWeight);
+        PlayerPrefs.SetInt("points", CalculatePoints());
     }
 
-    private float CalculatePoints()
+    private int CalculatePoints()
     {
         return fish * fishWeight;
     }
@@ -63,7 +64,7 @@ public class Game : MonoBehaviour
             //Calculate survival chance
             float survivalRate = food / 25 * 100;
             //randomise the fish sickness
-            int fishSickness = Random.Range(0, 101);
+            int fishSickness = UnityEngine.Random.Range(0, 101);
 
             //If the fish sickness is higher thant the survival rate kill it
             if (fishSickness > survivalRate)
@@ -87,7 +88,7 @@ public class Game : MonoBehaviour
             //Fish chance of death
             float deathrate = sickness / 85 * 100;
             //Fish health
-            int fishSurvival = Random.Range(1, 100);
+            int fishSurvival = UnityEngine.Random.Range(1, 100);
             //if fish health is below death chance
             if (fishSurvival < deathrate)
             {
