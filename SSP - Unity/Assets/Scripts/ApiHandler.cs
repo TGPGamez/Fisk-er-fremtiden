@@ -43,6 +43,8 @@ public class ApiHandler : MonoBehaviour
         try
         {
             HttpResponseMessage response = await httpClient.PostAsync($"{url}record", content);
+            Debug.Log(response.RequestMessage);
+            Debug.Log(response.StatusCode);
         }
         catch (Exception ex)
         {
@@ -51,5 +53,4 @@ public class ApiHandler : MonoBehaviour
         }
        
     }
-
 }

@@ -1714,7 +1714,7 @@ PrefabInstance:
     - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
         type: 3}
       propertyPath: time
-      value: 420
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
         type: 3}
@@ -1723,8 +1723,33 @@ PrefabInstance:
       objectReference: {fileID: 1588465915}
     - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
         type: 3}
+      propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
+        type: 3}
       propertyPath: everySecondEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
+        type: 3}
+      propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
+        type: 3}
+      propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1648165038}
+    - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
+        type: 3}
+      propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
+        type: 3}
+      propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SceneChangeWithIndex
       objectReference: {fileID: 0}
     - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
         type: 3}
@@ -1763,6 +1788,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
         type: 3}
+      propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
+        type: 3}
+      propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
+        type: 3}
       propertyPath: everySecondEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Game, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -1770,6 +1805,11 @@ PrefabInstance:
         type: 3}
       propertyPath: everySecondEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Game, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
+        type: 3}
+      propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
         type: 3}
@@ -5034,6 +5074,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e545199ba4129814b82ec93fa2cac7aa, type: 3}
+--- !u!114 &1648165038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2136770064980469835, guid: e545199ba4129814b82ec93fa2cac7aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1648165037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8624b64e732e0914bba49d44529e7dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1655412784
 PrefabInstance:
   m_ObjectHideFlags: 0

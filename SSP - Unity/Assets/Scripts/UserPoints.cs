@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UserPoints
 {
-    public UserPoints(string name, int highestWeight, int mostFish, int points)
+    public UserPoints(string name, float highestWeight, float mostFish, float points)
     {
         Name = name;
         HighestWeight = highestWeight;
@@ -13,9 +13,9 @@ public class UserPoints
     }
 
     public string Name { get; set; }
-    public int HighestWeight { get; set; }
-    public int MostFish { get; set; }
-    public int Points { get; set; }
+    public float HighestWeight { get; set; }
+    public float MostFish { get; set; }
+    public float Points { get; set; }
 
     public override string ToString()
     {

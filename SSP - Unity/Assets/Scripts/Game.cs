@@ -16,21 +16,19 @@ public class Game : MonoBehaviour
     [SerializeField] private float fishWeight; 
     [SerializeField] private float food; 
     [SerializeField] private float waterPollution; 
-    [SerializeField] private float sickness; 
+    [SerializeField] private float sickness;
 
-    public void StartScene()
+
+    private void OnDisable()
     {
-        
+        PlayerPrefs.SetFloat("fishAmount", fish);
+        PlayerPrefs.SetFloat("fishWeight", fishWeight);
+        PlayerPrefs.SetFloat("points", CalculatePoints());
     }
 
-    public void ResetScene()
+    private float CalculatePoints()
     {
-       
-    }
-
-    public void EndScene()
-    {
-
+        return fish * fishWeight;
     }
 
     /// <summary>

@@ -119,6 +119,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Typing Sphere Right
       objectReference: {fileID: 0}
+    - target: {fileID: 8318950459942444729, guid: d2121c8d819597349ac6f3e6043fa1f3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2121c8d819597349ac6f3e6043fa1f3, type: 3}
 --- !u!4 &5686134208553950744 stripped
