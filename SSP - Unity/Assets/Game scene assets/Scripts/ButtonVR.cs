@@ -1,8 +1,3 @@
-/**************************************************
-Copyright : Copyright (c) RealaryVR. All rights reserved.
-Description: Script for VR Button functionality.
-***************************************************/
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,15 +9,17 @@ public class ButtonVR : MonoBehaviour
     public UnityEvent onPress;
     public UnityEvent onRelease;
     GameObject presser;
-    //AudioSource sound;
     bool isPressed;
 
     void Start()
     {
-        //sound = GetComponent<AudioSource>();
         isPressed = false;
     }
 
+    /// <summary>
+    /// When collider enter, then update button and execute press event
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (!isPressed)
@@ -30,11 +27,14 @@ public class ButtonVR : MonoBehaviour
             button.transform.localPosition = new Vector3(0, 0.003f, 0);
             presser = other.gameObject;
             onPress.Invoke();
-            //sound.Play();
             isPressed = true;
         }
     }
 
+    /// <summary>
+    /// When collider exit, then update button and execute release event
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == presser)
@@ -43,14 +43,6 @@ public class ButtonVR : MonoBehaviour
             onRelease.Invoke();
             isPressed = false;
         }
-    }
-
-    public void SpawnSphere()
-    {
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        sphere.transform.localPosition = new Vector3(0, 1, 2);
-        sphere.AddComponent<Rigidbody>();
     }
 
 }

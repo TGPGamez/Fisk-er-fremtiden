@@ -8,16 +8,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ButtonController : XRBaseInteractable
 {
     /// <summary>
-    /// When the button is pressed the event activete
+    /// When the button is pressed the event activate
     /// </summary>
     public UnityEvent OnPress = null;
 
-    //
     private float yMin = 0.0f;
     private float yMax = 0.0f;
     private bool previousPress = false;
 
-    //
     private float handHeight = 0.0f;
     
     //XRBaseIntertactor is a interactor like a controller
@@ -33,9 +31,7 @@ public class ButtonController : XRBaseInteractable
         hoverExited.AddListener(EndPress);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
+
     private void OnDestroy()
     {
         hoverEntered.RemoveListener(StartPress);

@@ -5,6 +5,9 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// Class to change scene and change the ray interactor distance on gameobjects
+/// </summary>
 public class SceneControl : MonoBehaviour
 {
     [SerializeField] private SceneState state;
@@ -18,20 +21,24 @@ public class SceneControl : MonoBehaviour
             UpdateInteractor(2f, true);
         } else
         {
-            UpdateInteractor(0.02f, false);
+            UpdateInteractor(0.06f, false);
         }
     }
 
+    /// <summary>
+    /// Load a scene out from index
+    /// </summary>
+    /// <param name="index">scene id</param>
     public void SceneChangeWithIndex(int index)
     {
         SceneManager.LoadSceneAsync(index);
     }
 
-    public void SceneChangeWithName(string sceneName)
-    {
-        SceneManager.LoadSceneAsync(sceneName);
-    }
-
+    /// <summary>
+    /// Method to update the ray interactor distance and disable/enable visual
+    /// </summary>
+    /// <param name="distance">new ray distance</param>
+    /// <param name="visual">show visual or not</param>
     private void UpdateInteractor(float distance, bool visual)
     {
         foreach(GameObject interactorGameObject in interactorObjects)

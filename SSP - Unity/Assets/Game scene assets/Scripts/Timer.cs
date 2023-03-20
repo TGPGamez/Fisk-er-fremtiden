@@ -18,6 +18,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
+        //Calculate time
         timeLeft = CalculatetimeLeft();
     }
 
@@ -26,29 +27,51 @@ public class Timer : MonoBehaviour
     {
         if (timeLeft > 0)
         {
+            //Get delta time from Unity
             elapsed += Time.deltaTime;
+            //Determine if a 'second' has reached
             if (elapsed >= 1f)
             {
+                //Reset elapsed
                 elapsed = elapsed % 1f;
+                //Subtract from timeLeft
                 timeLeft--;
-                everySecondEvent.Invoke();
+
                 TimeSpan time = TimeSpan.FromSeconds(timeLeft);
-                visualtimer.text = string.Format($"{time.Minutes}:{time.Seconds}");
-                if (everySecondEvent != null)
+                //If there is a visual timer then update it to new time left
+                if (visualtimer != null)
                 {
-                    everySecondEvent.Invoke();
+                    visualtimer.text = string.Format($"{time.Minutes}:{time.Seconds}");
                 }
-                if (timeLeft == 0)
-                {
-                    if (endEvent != null)
-                    {
-                        endEvent.Invoke();
-                    }
-                }
+                EventHandle();
             }
         }
     }
 
+    /// <summary>
+    /// Method to execute our UnityEvents that
+    /// happens every second and when timer is done
+    /// </summary>
+    private void EventHandle()
+    {
+        if (everySecondEvent != null)
+        {
+            everySecondEvent.Invoke();
+        }
+        if (timeLeft == 0)
+        {
+            if (endEvent != null)
+            {
+                endEvent.Invoke();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Calculate the time left in seconds, out from the
+    /// type of indicator there is selected and the time
+    /// </summary>
+    /// <returns>Calculated time in seconds</returns>
     private float CalculatetimeLeft()
     {
         switch (type)
