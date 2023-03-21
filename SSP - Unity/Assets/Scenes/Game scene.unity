@@ -5821,9 +5821,9 @@ MonoBehaviour:
   waterPollutionSlider: {fileID: 1603164862}
   FishAmount: {fileID: 1662058778}
   FishWeight: {fileID: 1696874031}
-  fish: 10
+  fish: 100
   fishWeight: 100
-  food: 0
+  food: 70
   waterPollution: 0
   sickness: 0
   AllFishDeadEvent:
