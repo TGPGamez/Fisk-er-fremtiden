@@ -2033,6 +2033,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c3764e77ba05f24eacba5de908dbd50, type: 3}
+--- !u!114 &674111843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2044549126008719445, guid: 3c3764e77ba05f24eacba5de908dbd50,
+    type: 3}
+  m_PrefabInstance: {fileID: 674111842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e24058ea059864080294210b428713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &713762662
 GameObject:
   m_ObjectHideFlags: 0
@@ -5809,11 +5821,26 @@ MonoBehaviour:
   waterPollutionSlider: {fileID: 1603164862}
   FishAmount: {fileID: 1662058778}
   FishWeight: {fileID: 1696874031}
-  fish: 100
+  fish: 10
   fishWeight: 100
-  food: 70
+  food: 0
   waterPollution: 0
   sickness: 0
+  AllFishDeadEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 674111843}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: EndTimerEarly
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!64 &1881255825
 MeshCollider:
   m_ObjectHideFlags: 0

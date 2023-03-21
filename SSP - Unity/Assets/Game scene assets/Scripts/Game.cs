@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.Events;
 
 public class Game : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Game : MonoBehaviour
     [SerializeField] private float food; 
     [SerializeField] private float waterPollution; 
     [SerializeField] private float sickness;
+
+    public UnityEvent AllFishDeadEvent;
 
 
     private void OnDisable()
@@ -38,7 +41,7 @@ public class Game : MonoBehaviour
     public void FishEat()
     {
         //Remove a food percentage
-        food -= 1;
+        food -= 2;
 
         //Checks if food is in optimal range if it is between 50 and 70 it will be optimal grow
         if( food > 50 && food <= 70)
@@ -102,7 +105,17 @@ public class Game : MonoBehaviour
         if(waterPollution > 100) { waterPollution = 100; }
         if(sickness > 100) { sickness = 100; }
         if(food < 0) { food = 0; }
-        if(fish < 0) { fish = 0; }
+        
+        //Check if all fish is dead if true queue end event
+        if(fish <= 0) 
+        {
+            if (AllFishDeadEvent != null)
+            {
+                AllFishDeadEvent.Invoke();
+            }
+            fish = 0;
+        }
+        
 
         //Update visual variables
         foodslider.value = food;

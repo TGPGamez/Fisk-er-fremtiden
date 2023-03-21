@@ -49,6 +49,14 @@ public class Timer : MonoBehaviour
     }
 
     /// <summary>
+    /// In situation for if something happens it will stop the timer
+    /// </summary>
+    public void EndTimerEarly()
+    {
+        timeLeft = 0f;
+    }
+
+    /// <summary>
     /// Method to execute our UnityEvents that
     /// happens every second and when timer is done
     /// </summary>
