@@ -41,7 +41,7 @@ public class Game : MonoBehaviour
     public void FishEat()
     {
         //Remove a food percentage
-        food -= 2;
+        food -= 1;
 
         //Checks if food is in optimal range if it is between 50 and 70 it will be optimal grow
         if( food > 50 && food <= 70)
