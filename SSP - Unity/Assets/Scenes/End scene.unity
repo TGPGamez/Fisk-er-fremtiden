@@ -4016,6 +4016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579180867}
   - component: {fileID: 579180866}
+  - component: {fileID: 579180868}
   m_Layer: 0
   m_Name: DataManage
   m_TagString: Untagged
@@ -4035,7 +4036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26295aa598b98804ba21a864a6ca1c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apiHandler: {fileID: 1613999644}
+  apiHandler: {fileID: 579180868}
   fishText: {fileID: 1737786686}
   weightText: {fileID: 657934046}
   pointsText: {fileID: 1972082015}
@@ -4052,8 +4053,21 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &579180868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579180865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7731d0b029513745b42a434a886cb2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: http://192.168.1.147:5000/
 --- !u!1001 &615256049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8003,7 +8017,7 @@ RectTransform:
   - {fileID: 1767200450}
   - {fileID: 270593180}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9882,51 +9896,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1603131805}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1613999642
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1613999643}
-  - component: {fileID: 1613999644}
-  m_Layer: 0
-  m_Name: ApiObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1613999643
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613999642}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1613999644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613999642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7731d0b029513745b42a434a886cb2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  url: https://localhost:7030/
 --- !u!1 &1614452916
 GameObject:
   m_ObjectHideFlags: 0

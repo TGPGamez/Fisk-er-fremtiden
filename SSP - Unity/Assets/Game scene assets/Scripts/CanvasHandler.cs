@@ -46,7 +46,7 @@ public class CanvasHandler : MonoBehaviour
         if (input != null && input.text.Length >= 2)
         {
             //Send data to api
-            dataManage.SendMessage(input.text);
+            dataManage.SendToApi(input.text);
             //Change back to start scene
             sceneControl.SceneChangeWithIndex(0);
         }
