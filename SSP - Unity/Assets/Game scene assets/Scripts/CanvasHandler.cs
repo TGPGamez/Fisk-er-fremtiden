@@ -11,23 +11,10 @@ public class CanvasHandler : MonoBehaviour
     [SerializeField] private Canvas enterNameCanvas;
     [SerializeField] private TMP_InputField input;
     [SerializeField] private GameObject keyboard;
-    [SerializeField] private ApiHandler apiHandler;
+    [SerializeField] private DataManage dataManage;
     [SerializeField] private SceneControl sceneControl;
 
-    private int fishAmount;
-    private int fishWeight;
-    private int points;
-
-    /// <summary>
-    /// When script is loaded then retrieve
-    /// player data from game
-    /// </summary>
-    private void OnEnable()
-    {
-        fishAmount = PlayerPrefs.GetInt("fishAmount");
-        fishWeight = PlayerPrefs.GetInt("fishWeight");
-        points = PlayerPrefs.GetInt("points");
-    }
+    
 
     /// <summary>
     /// Method to determine next action
@@ -58,10 +45,8 @@ public class CanvasHandler : MonoBehaviour
     {
         if (input != null && input.text.Length >= 2)
         {
-            //Create object with data
-            UserPoints userPoints = new UserPoints(input.text, fishWeight, fishAmount, points);
-            //Call Api to post result
-            apiHandler.CallPostApiAsync(userPoints);
+            //Send data to api
+            dataManage.SendMessage(input.text);
             //Change back to start scene
             sceneControl.SceneChangeWithIndex(0);
         }
