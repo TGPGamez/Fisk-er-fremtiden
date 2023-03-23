@@ -35,7 +35,6 @@ public class VRButton : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("FUCK");
         if (other.gameObject == presser)
         {
             Button.transform.localPosition = originalPosition;
